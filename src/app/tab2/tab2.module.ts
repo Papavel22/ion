@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
-
+import {VComponent} from './components/v-component/v.component';
 @NgModule({
   imports: [
     IonicModule,
@@ -12,6 +12,6 @@ import { Tab2Page } from './tab2.page';
     FormsModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page, VComponent]
 })
 export class Tab2PageModule {}

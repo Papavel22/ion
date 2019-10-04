@@ -1,0 +1,29 @@
+<ion-button color="danger" (click)="setOutName()">Danger</ion-button>
+<ion-card *ngFor="let beast of beasts" color="danger" >
+    <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>
+            {{ beast.name }}
+            <ion-badge color="secondary">
+                <i>age</i>{{ beast.age }}
+            </ion-badge>
+        </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        {{ beast.description }}
+        <ion-list>
+            <ng-container *ngFor="let family of beast.family | keyvalue">
+                <ion-item *ngIf="family.key !== 'characteristics'">
+                    <ion-label>{{ family.key }}: {{ family.value }}</ion-label>
+                </ion-item>
+
+                <ng-container *ngIf="family.key === 'characteristics'">
+                    <ion-item *ngFor="let characteristic of family.value | keyvalue">
+                        <ion-label>{{ characteristic.key }}: {{ characteristic.value }}</ion-label>
+                    </ion-item>
+                </ng-container>
+            </ng-container>
+
+        </ion-list>
+    </ion-card-content>
+</ion-card>
