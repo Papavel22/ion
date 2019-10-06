@@ -1,4 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
+import { Beast } from '../../types/types';
+
 
 @Component({
     selector: 'app-v-comp',
@@ -6,8 +8,8 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
     styleUrls: ['v.component.scss']
 })
 export class VComponent {
-    @Input () beasts: any[];
-    @Output () outName: EventEmitter<any> = new EventEmitter<any>();
+    @Input () beasts: Beast.IBeast[];
+    @Output () outName: EventEmitter<string> = new EventEmitter<string>();
 
     constructor() {}
 

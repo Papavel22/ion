@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Beast } from './types/types';
 
 @Component({
   selector: 'app-tab2',
@@ -7,17 +8,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   public names = '';
-  public beasts: any[] = [
+  public beasts: Beast.IBeast[] = [
     {
       name: 'Bear',
       description: 'Big and angry dick in your mouth bitch',
       age: 3,
       family : {
-        type: 'baggins',
-        oreol: 'woods',
+        type: Beast.EType.BAGGINS,
+        oreol: Beast.EOreol.WOODS,
         characteristics: {
           size: 'big',
-          food: ['meat', 'fish', 'you'],
+          food: [Beast.EFood.MEAT, 'fish', 'you'],
         },
       },
     },
